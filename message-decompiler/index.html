@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message Browser</title>
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+
+      <button id="history-button" title="History"><span></span></button>
+
+      <div class="col">
+        <h2 style="pointer-events: none;">Input</h2>
+        <div class="row">
+          <input id="message-input" placeholder="Enter a message..." style="width: 100%;" />
+          <button id="go-button" type="button">Go</button>
+          <button id="clear-button" type="button">Clear</button>
+        </div>
+        
+        <h2 id="parsed-heading" class="twirled">Parsed<span>></span></h2>
+        <output id="parsed-output"></output>
+
+        <h2 id="decoded-heading">Decoded<span>></span></h2>
+        <output id="decoded-output"></output>
+      </div>
+
+    </div>
+
+    <div id="history-container">
+      <ul></ul>
+    </div>
+  </body>
+</html>
