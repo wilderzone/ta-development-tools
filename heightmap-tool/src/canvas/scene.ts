@@ -133,9 +133,9 @@ export class Scene {
 			}
 		}
 		if (tileMove) {
+			event.distance.multiply(this.view.zoom.inverse);
+			event.distance.round();
 			for (const tile of this.tiles.selected) {
-				event.distance.multiply(this.view.zoom.inverse);
-				event.distance.round();
 				tile.rectangle.position.add(event.distance);
 			}
 		} else {
