@@ -1,0 +1,20 @@
+:root {
+}
+
+*,
+*::before,
+*::after {
+	position: relative;
+	box-sizing: border-box;
+	margin: 0;
+	user-select: none;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	font-family: 'Segoe UI', Verdana, sans-serif;
+}
