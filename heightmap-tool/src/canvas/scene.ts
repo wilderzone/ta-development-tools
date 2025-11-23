@@ -66,6 +66,9 @@ export class Scene {
 					tile.cropping = !tile.cropping;
 				}
 				break;
+			case 't':
+				this.debug.value = !this.debug.value;
+				break;
 			case 'ArrowUp': {
 				const side = event.shift ? 'bottom' : 'top';
 				for (const tile of this.tiles.selected) {

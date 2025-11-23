@@ -83,6 +83,10 @@ watch(
 					<td>Reset zoom</td>
 					<td><kbd>0</kbd></td>
 				</tr>
+				<tr>
+					<td>Toggle the text layer</td>
+					<td><kbd>T</kbd></td>
+				</tr>
 			</tbody>
 		</table>
 	</dialog>
