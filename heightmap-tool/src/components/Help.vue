@@ -97,6 +97,12 @@ watch(
 	border: var(--gap-sm) solid var(--color-button);
 	border-radius: var(--border-radius-lg);
 	box-shadow: var(--shadow);
+	animation: fade-in 0.2s ease forwards;
+
+	&::backdrop {
+		background-color: #0006;
+		animation: fade-in 0.2s ease forwards;
+	}
 
 	& .header {
 		display: flex;
@@ -124,5 +130,10 @@ watch(
 		border-radius: var(--border-radius-sm);
 		box-shadow: 0 0 4px #fff inset;
 	}
+}
+
+@keyframes fade-in {
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
 }
 </style>
