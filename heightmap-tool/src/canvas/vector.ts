@@ -107,6 +107,12 @@ export class Rectangle {
 		return new Vector2(this.size.x / 2 + this.position.x, this.size.y / 2 + this.position.y);
 	}
 
+	public clone(): Rectangle {
+		const rectangle = new Rectangle(this.position.x, this.position.y, this.size.x, this.size.y);
+		rectangle.position.z = this.position.z;
+		return rectangle;
+	}
+
 	public contains(point: Vector2): boolean {
 		return (
 			this.position.x <= point.x

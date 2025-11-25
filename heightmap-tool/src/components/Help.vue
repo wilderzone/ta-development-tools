@@ -48,6 +48,10 @@ watch(
 					<td><kbd>Del</kbd></td>
 				</tr>
 				<tr>
+					<td>Duplicate selected tiles</td>
+					<td><kbd>D</kbd></td>
+				</tr>
+				<tr>
 					<td>Put selected tiles into crop mode</td>
 					<td><kbd>R</kbd></td>
 				</tr>

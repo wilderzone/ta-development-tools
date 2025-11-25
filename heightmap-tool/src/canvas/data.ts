@@ -13,8 +13,16 @@ export class Data {
 		return this.all.filter(tile => tile.selected);
 	}
 
-	public add(file: string, source: string): Tile {
-		const tile = new Tile(file, source);
+	public add(tile: Tile): Tile;
+	public add(file: string, source: string): Tile;
+	public add(fileOrTile: string | Tile, source?: string): Tile {
+		if (fileOrTile instanceof Tile) {
+			this.tiles.push(fileOrTile);
+			this.sort();
+			return fileOrTile;
+		}
+
+		const tile = new Tile(fileOrTile, source!);
 		const maxZ = this.tiles.length
 			? Math.max(...this.tiles.map(tile => tile.rectangle.position.z))
 			: 0;

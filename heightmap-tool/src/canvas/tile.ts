@@ -41,6 +41,13 @@ export class Tile {
 		);
 	}
 
+	public clone(): Tile {
+		const tile = new Tile(this.file, this.source);
+		tile.rectangle = this.rectangle.clone();
+		tile.subRectangle = this.subRectangle.clone();
+		return tile;
+	}
+
 	public crop(side: 'top' | 'right' | 'bottom' | 'left', reduction: number): void {
 		if (!this.cropping) return;
 		switch (side) {

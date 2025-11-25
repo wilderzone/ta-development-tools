@@ -1,7 +1,7 @@
 import { type Ref, ref } from 'vue';
 import { Data } from './data';
 import { Input, InputClickEvent, InputKeyEvent, InputMoveEvent } from './input';
-import { Rectangle, Vector2 } from './vector';
+import { Rectangle, Vector2, Vector3 } from './vector';
 
 export class Scene {
 	private canvas?: HTMLCanvasElement;
@@ -60,6 +60,18 @@ export class Scene {
 				break;
 			case 'a':
 				this.tiles.select('all');
+				break;
+			case 'd':
+				const minZ = Math.min(...this.tiles.selected.map(tile => tile.rectangle.position.z));
+				const maxZ = Math.max(...this.tiles.selected.map(tile => tile.rectangle.position.z));
+				const zDifference = maxZ - minZ;
+				for (const tile of this.tiles.selected) {
+					tile.selected = false;
+					const newTile = tile.clone();
+					newTile.rectangle.position.add(new Vector3(20, 20, zDifference + 1));
+					newTile.selected = true;
+					this.tiles.add(newTile);
+				}
 				break;
 			case 'r':
 				for (const tile of this.tiles.selected) {
