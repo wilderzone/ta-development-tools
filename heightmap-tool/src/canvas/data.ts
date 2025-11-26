@@ -50,7 +50,10 @@ export class Data {
 		if (tiles === 'all') {
 			tiles = this.all;
 		}
-		tiles.forEach(tile => tile.selected = false);
+		tiles.forEach(tile => {
+			tile.cropping = false;
+			tile.selected = false;
+		});
 	}
 
 	public sort(): void {
